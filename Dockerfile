@@ -4,23 +4,23 @@ MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 # R pre-requisites
 
 RUN apt-get update && \
-    apt-get install -y --allow-downgrades --no-install-recommends apt-utils\
-    libpangoft2-1.0-0=1.40.3-2 \
+    apt-get install -y --no-install-recommends apt-utils\
+    libpangoft2-1.0-0  \
     libxt-dev \
     xvfb \
     xauth \ 
     xfonts-base \
-    libglib2.0-0=2.50.1-1 \
+    libglib2.0-0  \
     libglib2.0-bin  \
-    libpango-1.0-0=1.40.3-2 \
+    libpango-1.0-0  \
     libcurl4-openssl-dev \ 
     libxml2-dev \
     libglib2.0-dev \
     libgdk-pixbuf2.0-dev \
     libatk1.0-dev \
     libssl-dev \
-    libpangocairo-1.0-0=1.40.3-2\
-    libcairo2=1.14.6-1+b1 \
+    libpangocairo-1.0-0 \
+    libcairo2  \
     libcairo2-dev \ 
     libgtk2.0-dev \   
     libpango1.0-dev \
