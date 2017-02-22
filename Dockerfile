@@ -5,7 +5,7 @@ MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends apt-utils\
-    r-base r-base-dev r-base-core
+    r-base r-base-dev r-base-core \
     libpangoft2-1.0-0  \
     libxt-dev \
     xvfb \
