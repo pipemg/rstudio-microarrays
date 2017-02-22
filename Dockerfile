@@ -6,8 +6,7 @@ MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 RUN apt-get update && \
     apt-get -y dist-upgrade && \
-    apt-get install -y --no-install-recommends apt-utils \
-    apt-get install -y software-properties-common && \
+    apt-get install -y --no-install-recommends apt-utils software-properties-common && \
     add-apt-repository -y ppa:opencpu/opencpu-1.6 && \
     apt-get update && \
     apt-get install -y opencpu rstudio-server \
@@ -38,7 +37,7 @@ RUN apt-get update && \
     r-cran-xml \
     libnlopt-dev \
     xml-core \
-    gcc && apt-get clean && \
+    gcc && apt-get autoremove &&  apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 
