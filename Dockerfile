@@ -75,8 +75,6 @@ RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOque
 
 # Apache ports
 EXPOSE 80
-EXPOSE 443
-EXPOSE 8004
 EXPOSE 8787
 
 
