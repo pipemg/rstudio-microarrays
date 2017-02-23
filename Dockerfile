@@ -37,7 +37,7 @@ RUN apt-get update && \
     r-cran-xml \
     libnlopt-dev \
     xml-core \
-    gcc && apt-get autoremove &&  apt-get clean && \
+    gcc  &&  apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 
