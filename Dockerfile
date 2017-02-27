@@ -9,8 +9,13 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
     apt-get install -y --no-install-recommends apt-utils && \
     apt-get install -y --no-install-recommends software-properties-common && \
-    r-base r-base-dev r-base-core \
-    dialog \
+    # Appends the CRAN repository to your sources.list file 
+    sh -c 'echo "deb http://cran.rstudio.com/bin/linux/debian lenny-cran/" >> /etc/apt/sources.list' && \
+    # Adds the CRAN GPG key, which is used to sign the R packages for security.
+    apt-key adv --keyserver subkeys.pgp.net --recv-key 381BA480 && \
+    apt-get update && \
+    apt-get install r-base r-base-dev && \
+    apt-get install dialog \
     libpangoft2-1.0-0  \
     libxt-dev \
     xvfb \
