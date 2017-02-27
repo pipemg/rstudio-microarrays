@@ -34,7 +34,7 @@ RUN apt-get dist-upgrade && apt-get update && \
     gcc && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install -y r-bioc-*
+RUN apt-get install -y  r-bioc-biobase r-bioc-biocparallel
 
 RUN Rscript -e "install.packages(c('gridSVG','cdfname','xml', 'gcc', 'irkernel', 'plyr', 'devtools', 'dplyr', 'gplots', 'ggplot2', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo'), repos='https://cloud.r-project.org')"
 
