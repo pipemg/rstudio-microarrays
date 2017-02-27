@@ -7,13 +7,8 @@ MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 ENV DEBIAN_FRONTEND noninteractive 
 
 RUN apt-get update && \
-    apt-get -y dist-upgrade && \
-    apt-get update && \
     apt-get install -y --no-install-recommends apt-utils && \
     apt-get install -y --no-install-recommends software-properties-common && \
-    add-apt-repository -y ppa:opencpu/opencpu-1.6 && \
-    apt-get update && \
-    apt-get install -y opencpu rstudio-server \
     r-base r-base-dev r-base-core \
     dialog \
     libpangoft2-1.0-0  \
