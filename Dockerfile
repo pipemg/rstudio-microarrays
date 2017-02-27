@@ -67,7 +67,7 @@ RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
    
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery'));"
 
-RUN apt-get install gdebi-core
+RUN apt-get install -y gdebi-core
 RUN wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
 RUN gdebi rstudio-server-1.0.136-amd64.deb
 RUN apt-get update && apt-get upgrade
