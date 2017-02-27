@@ -1,21 +1,11 @@
-#FROM ubuntu:16.04
 FROM rocker/rstudio
-
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 # R pre-requisites
-ENV DEBIAN_FRONTEND noninteractive 
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends apt-utils && \
-    apt-get install -y --no-install-recommends software-properties-common && \
-    # Appends the CRAN repository to your sources.list file 
-    sh -c 'echo "deb http://cran.rstudio.com/bin/linux/debian lenny-cran/" >> /etc/apt/sources.list' && \
-    # Adds the CRAN GPG key, which is used to sign the R packages for security.
-    apt-key adv --keyserver subkeys.pgp.net --recv-key 381BA480 && \
-    apt-get update && \
-    apt-get install r-base r-base-dev && \
-    apt-get install dialog \
+    apt-get install -y --no-install-recommends apt-utils\
+    r-devel \
     libpangoft2-1.0-0  \
     libxt-dev \
     xvfb \
@@ -42,7 +32,7 @@ RUN apt-get update && \
     r-cran-xml \
     libnlopt-dev \
     xml-core \
-    gcc  &&  apt-get clean && \
+    gcc && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 
@@ -75,11 +65,3 @@ RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
    
    
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery'));"
-
-
-# Apache ports
-EXPOSE 80
-EXPOSE 8787
-EXPOSE 8080
-
-
