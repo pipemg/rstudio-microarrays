@@ -1,4 +1,5 @@
-FROM ubuntu:16.04
+#FROM ubuntu:16.04
+FROM rocker/rstudio
 
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
@@ -82,6 +83,3 @@ EXPOSE 8787
 EXPOSE 8080
 
 
-
-# Define default command.
-CMD service opencpu restart && rstudio-server restart && tail -F /var/log/opencpu/apache_access.log
