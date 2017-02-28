@@ -1,4 +1,4 @@
-FROM rocker/rstudio
+FROM rocker/rstudio-stable:3.3.2
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 # R pre-requisites
