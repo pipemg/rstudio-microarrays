@@ -47,12 +47,9 @@ RUN apt-get install -y --no-install-recommends apt-utils\
     fonts-dejavu \
     gfortran \
     libssh2-1-dev \
-    libssl-dev \
     r-cran-xml \
     libnlopt-dev \
     xml-core \
-    libssl1.0.0-dbg \
-    libssl1.0.0 \
     lsb-release \
     gcc && apt-get clean
   
