@@ -2,6 +2,7 @@ FROM quantumobject/docker-rstudio
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 
+RUN apt-get -y update -qq  && apt-get -y upgrade
 
 RUN apt-get install -y --no-install-recommends apt-utils\
     libpangoft2-1.0-0  \
@@ -32,7 +33,6 @@ RUN apt-get install -y --no-install-recommends apt-utils\
     lsb-release \
     gcc && apt-get clean
   
-RUN apt-get -y update -qq  && apt-get -y upgrade
 
 RUN apt-get install -y  r-bioc-biobase
 
