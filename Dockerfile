@@ -1,4 +1,4 @@
-FROM rocker/r-base:3.3.2
+FROM rocker/r-base:3.3.1
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 
