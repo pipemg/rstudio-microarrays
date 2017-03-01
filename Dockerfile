@@ -1,10 +1,12 @@
-FROM rocker/rstudio-stable:3.3.2
+FROM dougmet/r-studio
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 # R pre-requisites
 
-RUN apt-get dist-upgrade && apt-get update && \
-    apt-get install -y --no-install-recommends apt-utils\
+RUN apt-get update -qq \
+        && apt-get upgrade -y
+        
+RUN apt-get install -y --no-install-recommends apt-utils\
     libpangoft2-1.0-0  \
     libxt-dev \
     xvfb \
@@ -67,10 +69,10 @@ RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
    
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery'));"
 
-RUN apt-get install -y gdebi-core
-RUN wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
-RUN gdebi rstudio-server-1.0.136-amd64.deb
-RUN apt-get update && apt-get upgrade
+#RUN apt-get install -y gdebi-core
+#RUN wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
+#RUN gdebi rstudio-server-1.0.136-amd64.deb
+#RUN apt-get update && apt-get upgrade
 
 
 
