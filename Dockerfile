@@ -23,7 +23,8 @@ RUN rm -rf /var/lib/apt/lists/ \
     psmisc \
     supervisor \
     sudo \
-  && VER=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-server/current.ver) \
+ # && VER=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-server/current.ver) \
+  && VER=1.0.44 \
   && wget -q http://download2.rstudio.org/rstudio-server-${VER}-amd64.deb \
   && dpkg -i rstudio-server-${VER}-amd64.deb \
   && rm rstudio-server-*-amd64.deb \
