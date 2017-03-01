@@ -20,6 +20,7 @@ RUN rm -rf /var/lib/apt/lists/ \
     libedit2 \
     libcurl4-openssl-dev \
     libssl-dev \
+    libssl-dev/unstable \
     psmisc \
     supervisor \
     sudo 
