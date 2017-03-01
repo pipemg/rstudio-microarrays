@@ -54,7 +54,7 @@ RUN apt-get install -y --no-install-recommends apt-utils\
     gcc && apt-get clean
   
  # && VER=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-server/current.ver) \
-  && VER=1.0.44 \
+RUN VER=1.0.44 \
   && wget -q http://download2.rstudio.org/rstudio-server-${VER}-amd64.deb \
   && dpkg -i rstudio-server-${VER}-amd64.deb \
   && rm rstudio-server-*-amd64.deb \
