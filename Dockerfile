@@ -22,7 +22,7 @@ RUN rm -rf /var/lib/apt/lists/ \
     libssl-dev \
     psmisc \
     supervisor \
-    sudo \
+    sudo 
 
 RUN apt-get install -y --no-install-recommends apt-utils\
     libpangoft2-1.0-0  \
