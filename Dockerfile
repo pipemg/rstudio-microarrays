@@ -38,8 +38,7 @@ RUN apt-get install -y --no-install-recommends apt-utils\
     libglib2.0-dev \
     libgdk-pixbuf2.0-dev \
     libatk1.0-dev \
-    libssl \
-    libssl-dev \
+    libssl1.0.0  libssl1.0.0-dbg\
     libpangocairo-1.0-0 \
     libcairo2  \
     libcairo2-dev \ 
