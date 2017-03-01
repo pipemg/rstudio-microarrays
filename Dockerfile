@@ -10,7 +10,7 @@ ENV LANG en_US.UTF-8
 ## Download and install RStudio server & dependencies
 ## Attempts to get detect latest version, otherwise falls back to version given in $VER
 ## Symlink pandoc, pandoc-citeproc so they are available system-wide
-deb http://security.debian.org/debian-security jessie/updates main 
+RUN deb http://security.debian.org/debian-security jessie/updates main 
 
 RUN rm -rf /var/lib/apt/lists/ \
   && apt-get update \
