@@ -23,6 +23,39 @@ RUN rm -rf /var/lib/apt/lists/ \
     psmisc \
     supervisor \
     sudo \
+
+RUN apt-get install -y --no-install-recommends apt-utils\
+    libpangoft2-1.0-0  \
+    libxt-dev \
+    xvfb \
+    xauth \ 
+    xfonts-base \
+    libglib2.0-0  \
+    libglib2.0-bin  \
+    libpango-1.0-0  \
+    libcurl4-openssl-dev \ 
+    libxml2-dev \
+    libglib2.0-dev \
+    libgdk-pixbuf2.0-dev \
+    libatk1.0-dev \
+    libssl-dev \
+    libpangocairo-1.0-0 \
+    libcairo2  \
+    libcairo2-dev \ 
+    libgtk2.0-dev \   
+    libpango1.0-dev \
+    fonts-dejavu \
+    gfortran \
+    libssh2-1-dev \
+    libssl-dev \
+    r-cran-xml \
+    libnlopt-dev \
+    xml-core \
+    libssl1.0.0-dbg \
+    libssl1.0.0 \
+    lsb-release \
+    gcc && apt-get clean
+  
  # && VER=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-server/current.ver) \
   && VER=1.0.44 \
   && wget -q http://download2.rstudio.org/rstudio-server-${VER}-amd64.deb \
@@ -71,42 +104,8 @@ EXPOSE 8787
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
 
-# R pre-requisites
-RUN apt-get update -qq \
-        && apt-get upgrade -y
-        
-RUN apt-get install -y --no-install-recommends apt-utils\
-    libpangoft2-1.0-0  \
-    libxt-dev \
-    xvfb \
-    xauth \ 
-    xfonts-base \
-    libglib2.0-0  \
-    libglib2.0-bin  \
-    libpango-1.0-0  \
-    libcurl4-openssl-dev \ 
-    libxml2-dev \
-    libglib2.0-dev \
-    libgdk-pixbuf2.0-dev \
-    libatk1.0-dev \
-    libssl-dev \
-    libpangocairo-1.0-0 \
-    libcairo2  \
-    libcairo2-dev \ 
-    libgtk2.0-dev \   
-    libpango1.0-dev \
-    fonts-dejavu \
-    gfortran \
-    libssh2-1-dev \
-    libssl-dev \
-    r-cran-xml \
-    libnlopt-dev \
-    xml-core \
-    gcc && apt-get clean
   
-  
-  
-RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get -y update -qq  && apt-get -y upgrade
 
 RUN apt-get install -y  r-bioc-biobase
 
