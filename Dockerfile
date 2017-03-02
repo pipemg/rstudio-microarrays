@@ -31,19 +31,37 @@ RUN apt-get install -y --no-install-recommends apt-utils\
     libnlopt-dev \
     xml-core \
     lsb-release \
+    libssl-dev \
     gcc && apt-get clean
   
 
-RUN apt-get install -y  r-bioc-biobase
 
 RUN Rscript -e "install.packages(c('gridSVG','cdfname','xml', 'gcc', 'irkernel', 'plyr', 'devtools', 'dplyr', 'gplots', 'ggplot2', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo'), repos='https://cloud.r-project.org')"
+
+
+
+RUN apt-get install -y  r-bioc-biobase \
+    r-bioc-affyio  \
+    r-bioc-genefilter  \
+    r-bioc-annotate  \
+    r-bioc-annotationdbi  \
+    r-bioc-genomicfeatures  \
+    r-bioc-affy  \
+    r-bioc-s4vectors  \
+    r-bioc-biocgenerics \
+    r-bioc-biocinstaller \
+    r-bioc-biocparallel  \
+    r-bioc-biomart \
+    r-bioc-biostrings \
+    r-bioc-limma    
+
 
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite()"
 
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
    'annotate', \
    'limma', \
-   'affy', \
+  
    'GEOquery', \
    'SVGAnnotation', \ 
    'affxparser' , \
