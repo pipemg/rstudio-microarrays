@@ -35,6 +35,7 @@ RUN apt-get install -y --no-install-recommends apt-utils\
     xml-core \
     lsb-release \
     libssl-dev \
+    libcurl-dev \    
     gcc && apt-get clean
   
 
@@ -79,6 +80,9 @@ RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
    
    
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery'));"
+
+RUN apt-get -y update -qq  && apt-get -y upgrade
+
 
 #RUN apt-get install -y gdebi-core
 #RUN wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
