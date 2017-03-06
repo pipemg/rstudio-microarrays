@@ -13,19 +13,26 @@ also just enough of TeX to allow knitr to generate PDF output.
 ## How to pull the container
 Pull the container with the command:
 
+```
 [sudo] docker pull fmunoz/rstudio-microarrays
+```
+
 
 ## How to run
 Run using the default password from the Dockerfile build script:
 
-sudo docker run -d -i -t -p 8787:8787 -e USER="user" -e USERPASS="badpassword" fmunoz/rstudio-microarrays
+```
+[sudo] docker run -d -i -t -p 8787:8787 -e USER="user" -e USERPASS="badpassword" fmunoz/rstudio-microarrays
+```
 
 ## Load a volume
 
-sudo docker run -d -i -t -p 8787:8787 -e USER="user" -e USERPASS="badpassword"  -v /external/directory/for/user:/root/ fmunoz/rstudio-microarrays
+```
+[sudo] docker run -d -i -t -p 8787:8787 -e USER="user" -e USERPASS="badpassword"  -v /external/directory/for/user:/root/ fmunoz/rstudio-microarrays
+```
 
 ## How to access
 To access the app, point your web browser at
-http://your.hostname.here:8787/
+http://localhost:8787/
 
 You will be prompted to login. Use the username 'user' and the password 'badpassword'
