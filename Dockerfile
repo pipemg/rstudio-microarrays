@@ -13,6 +13,7 @@ RUN apt-get install -y --no-install-recommends apt-utils \
     libglib2.0-0  \
     libglib2.0-bin  \
     libpango-1.0-0  \
+    libcurl4-gnutls-dev \
     libghc-curl-dev \
     libcurl4-openssl-dev \
     libxml2-dev \
