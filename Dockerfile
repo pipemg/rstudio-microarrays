@@ -1,4 +1,4 @@
-FROM quantumobject/docker-rstudio
+FROM mccahill/rstudio
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 
@@ -28,6 +28,9 @@ RUN apt-get install -y --no-install-recommends apt-utils\
     gfortran \
     libssh2-1-dev \
     r-cran-xml \
+    r-cran-plyr \ 
+    r-cran-ggplot2 \
+    r-cran-gplots \    
     libnlopt-dev \
     xml-core \
     lsb-release \
@@ -36,9 +39,9 @@ RUN apt-get install -y --no-install-recommends apt-utils\
   
 
 
-RUN Rscript -e "install.packages(c('gridSVG','cdfname','xml', 'gcc', 'irkernel', 'plyr', 'devtools', 'dplyr', 'gplots', 'ggplot2', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo'), repos='https://cloud.r-project.org')"
+RUN Rscript -e "install.packages(c('gridSVG','cdfname', 'gcc', 'irkernel',  'devtools', 'dplyr', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo'), repos='https://cloud.r-project.org')"
 
-
+RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite()"
 
 RUN apt-get install -y  r-bioc-biobase \
     r-bioc-affyio  \
@@ -56,12 +59,10 @@ RUN apt-get install -y  r-bioc-biobase \
     r-bioc-limma    
 
 
-RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite()"
 
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
    'annotate', \
-   'limma', \
-  
+   'limma', \  
    'GEOquery', \
    'SVGAnnotation', \ 
    'affxparser' , \
