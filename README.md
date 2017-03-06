@@ -1,4 +1,4 @@
-# RStudio in a Docker Container
+# RStudio-Microarrays in a Docker Container
 
 ## What is this?
 This project is an example of the use of dockers with the r program lenguage, 
