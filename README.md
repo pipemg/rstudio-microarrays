@@ -22,17 +22,17 @@ Pull the container with the command:
 Run using the default password from the Dockerfile build script:
 
 ```
-[sudo] docker run -d -i -t -p 8787:8787 -e USER="user" -e USERPASS="badpassword" fmunoz/rstudio-microarrays
+[sudo] docker run -d -i -t -p 8787:8787 -e USERPASS="badpassword" fmunoz/rstudio-microarrays
 ```
 
 ## Load a volume
 
 ```
-[sudo] docker run -d -i -t -p 8787:8787 -e USER="user" -e USERPASS="badpassword"  -v /external/directory/for/user:/root/ fmunoz/rstudio-microarrays
+[sudo] docker run -d -i -t -p 8787:8787 -e USERPASS="badpassword"  -v /external/directory/for/user:/root/ fmunoz/rstudio-microarrays
 ```
 
 ## How to access
 To access the app, point your web browser at
 http://localhost:8787/
 
-You will be prompted to login. Use the username 'user' and the password 'badpassword'
+You will be prompted to login. Use the username 'guest' and the password 'badpassword'
