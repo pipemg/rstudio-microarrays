@@ -4,7 +4,7 @@ MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 RUN apt-get -y update -qq  && apt-get -y upgrade
 
-RUN apt-get install -y --no-install-recommends apt-utils\
+RUN apt-get install -y --no-install-recommends apt-utils \
     libpangoft2-1.0-0  \
     libxt-dev \
     xvfb \
@@ -39,11 +39,9 @@ RUN apt-get install -y --no-install-recommends apt-utils\
     gcc && apt-get clean
   
 
-
 RUN Rscript -e "install.packages(c('gridSVG','cdfname', 'gcc', 'irkernel',  'devtools', 'dplyr', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo'), repos='https://cloud.r-project.org')"
 
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite()"
-
 
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
 
@@ -76,7 +74,7 @@ RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
    'pathifier', \
    's4vectors', \
    'SVGAnnotation', \ 
-   'simpleaffy'   ));"
+   'simpleaffy'));"
    
    
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery'));"
