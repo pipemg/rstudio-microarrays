@@ -43,43 +43,39 @@ RUN Rscript -e "install.packages(c('gridSVG','cdfname', 'gcc', 'irkernel',  'dev
 
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite()"
 
-RUN apt-get install -y  r-bioc-biobase \
-    r-bioc-affyio  \
-    r-bioc-genefilter  \
-    r-bioc-annotate  \
-    r-bioc-annotationdbi  \
-    r-bioc-genomicfeatures  \
-    r-bioc-affy  \
-    r-bioc-s4vectors  \
-    r-bioc-biocgenerics \
-    r-bioc-biocinstaller \
-    r-bioc-biocparallel  \
-    r-bioc-biomart \
-    r-bioc-biostrings \
-    r-bioc-limma    
-
-
 
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
+
    'annotate', \
-   'limma', \  
-   'GEOquery', \
-   'SVGAnnotation', \ 
+   'annotationdbi', \
+   'arrayQualityMetrics', \
+   'affy', \
+   'affyio', \
    'affxparser' , \
-   'simpleaffy', \
+   'biostrings', \
+   'biocgenerics', \
+   'biocinstaller', \
+   'biocparallel',  \
+   'biomart', \
+   'frma', \   
+   'GEOquery', \
+   'genefilter', \
+   'genomicfeatures', \
    'hgu133a.db', \
    'hgu133a2.db', \
    'hgu133plus2.db', \
    'hugene10sttranscriptcluster.db', \
-   'oligo', \
-   'frma', \ 
    'hgu133afrmavecs', \
    'hgu133plus2frmavecs', \
    'hgu133plus2cdf', \
    'hgu133acdf', \
    'hugene10stv1cdf', \
-   'arrayQualityMetrics', \
-   'genefilter', 'pathifier' ));"
+   'limma', \  
+   'oligo', \
+   'pathifier', \
+   's4vectors', \
+   'SVGAnnotation', \ 
+   'simpleaffy'   ));"
    
    
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery'));"
