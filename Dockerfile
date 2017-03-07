@@ -85,7 +85,7 @@ RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOque
 RUN apt-get -y update -qq  && apt-get -y upgrade
 
 # add a non-root user so we can log into R studio as that user; make sure that user is in the group "users"
-RUN adduser --disabled-password --gecos "" --ingroup users guest
+#RUN adduser --disabled-password --gecos "" --ingroup users guest
 
 #RUN apt-get install -y gdebi-core
 #RUN wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
