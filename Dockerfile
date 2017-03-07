@@ -1,12 +1,17 @@
-FROM rocker/rstudio
+FROM mccahill/rstudio
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
-# R pre-requisites
+RUN apt-get -y -q dist-upgrade 
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends apt-utils\
-    r-base r-base-dev r-base-core \
-    libpangoft2-1.0-0  \
+RUN apt-get -y update -qq  && apt-get -y upgrade
+
+RUN apt-get install -y --no-install-recommends apt-utils  software-properties-common 
+
+RUN sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test 
+
+RUN apt-get -y update -qq  && apt-get -y upgrade
+
+RUN apt-get install -y --no-install-recommends libpangoft2-1.0-0  \
     libxt-dev \
     xvfb \
     xauth \ 
@@ -14,12 +19,11 @@ RUN apt-get update && \
     libglib2.0-0  \
     libglib2.0-bin  \
     libpango-1.0-0  \
-    libcurl4-openssl-dev \ 
     libxml2-dev \
     libglib2.0-dev \
     libgdk-pixbuf2.0-dev \
     libatk1.0-dev \
-    libssl-dev \
+    libssl1.0.0  \
     libpangocairo-1.0-0 \
     libcairo2  \
     libcairo2-dev \ 
@@ -28,41 +32,69 @@ RUN apt-get update && \
     fonts-dejavu \
     gfortran \
     libssh2-1-dev \
-    libssl-dev \
     r-cran-xml \
+    r-cran-plyr \ 
+    r-cran-ggplot2 \
+    r-cran-gplots \    
     libnlopt-dev \
     xml-core \
-    gcc && apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    lsb-release \
+    libssl-dev \
+    libstdc++6 \
+    gcc && apt-get clean
+    
+RUN sudo apt-get build-dep  -y  libcurl4-gnutls-dev  libghc-curl-dev  
+RUN sudo apt-get install -y libcurl4-gnutls-dev libghc-curl-dev 
+  
 
-
-
-RUN Rscript -e "install.packages(c('gridSVG','cdfname','xml', 'gcc', 'irkernel', 'plyr', 'devtools', 'dplyr', 'gplots', 'ggplot2', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo'), repos='https://cloud.r-project.org')"
+RUN Rscript -e "install.packages(c('gridSVG','cdfname', 'gcc', 'irkernel',  'devtools', 'dplyr', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo'), repos='https://cloud.r-project.org')"
 
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite()"
 
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
+
    'annotate', \
-   'limma', \
+   'annotationdbi', \
+   'arrayQualityMetrics', \
    'affy', \
-   'GEOquery', \
-   'SVGAnnotation', \ 
+   'affyio', \
    'affxparser' , \
-   'simpleaffy', \
+   'biostrings', \
+   'biocgenerics', \
+   'biocinstaller', \
+   'biocparallel',  \
+   'biomart', \
+   'frma', \   
+   'GEOquery', \
+   'genefilter', \
+   'genomicfeatures', \
    'hgu133a.db', \
    'hgu133a2.db', \
    'hgu133plus2.db', \
    'hugene10sttranscriptcluster.db', \
-   'oligo', \
-   'frma', \ 
    'hgu133afrmavecs', \
    'hgu133plus2frmavecs', \
    'hgu133plus2cdf', \
    'hgu133acdf', \
    'hugene10stv1cdf', \
-   'arrayQualityMetrics', \
-   'genefilter', 'pathifier' ));"
+   'limma', \  
+   'oligo', \
+   'pathifier', \
+   's4vectors', \
+   'SVGAnnotation', \ 
+   'simpleaffy'));"
    
    
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery'));"
+
+RUN apt-get -y update -qq  && apt-get -y upgrade
+
+# add a non-root user so we can log into R studio as that user; make sure that user is in the group "users"
+#RUN adduser --disabled-password --gecos "" --ingroup users guest
+
+#RUN apt-get install -y gdebi-core
+#RUN wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
+#RUN gdebi rstudio-server-1.0.136-amd64.deb
+#RUN apt-get update && apt-get upgrade
+
 
