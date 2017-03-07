@@ -4,10 +4,13 @@ MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 RUN apt-get -y update -qq  && apt-get -y upgrade
 
+RUN apt-get install -y --no-install-recommends apt-utils  software-properties-common 
 
+RUN sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test 
 
-RUN apt-get install -y --no-install-recommends apt-utils \
-    libpangoft2-1.0-0  \
+RUN apt-get -y update -qq  && apt-get -y upgrade
+
+RUN apt-get install -y --no-install-recommends libpangoft2-1.0-0  \
     libxt-dev \
     xvfb \
     xauth \ 
@@ -36,6 +39,7 @@ RUN apt-get install -y --no-install-recommends apt-utils \
     xml-core \
     lsb-release \
     libssl-dev \
+    libstdc++6 \
     gcc && apt-get clean
     
 RUN sudo apt-get build-dep  -y  libcurl4-gnutls-dev  libghc-curl-dev  
