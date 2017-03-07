@@ -1,6 +1,7 @@
 <img alt="Docker" src="https://msopentech.com/wp-content/uploads/dockericon.png" width="200">
+<img alt="R-Studio" src="https://teespring-storecontent.s3.amazonaws.com/FW6s2ljYB6HuZgDe15SiOQ_store_header_image" width="200">
+<img alt="Bioconductor"  src="://bioconductor.org/images/logo/jpg/bioconductor_logo_rgb.jpg" width="200">
 <img alt="Affymetrics"  src="http://mms.businesswire.com/media/20150720005017/en/477014/5/2294568_affymetrix_new_logo_no_tagline.jpg" width="200">
-
 [![Docker Pulls](https://img.shields.io/docker/pulls/fmunoz/rstudio-microarrays.svg?maxAge=2592000)](https://hub.docker.com/r/fmunoz/rstudio-microarrays/)
 
 
