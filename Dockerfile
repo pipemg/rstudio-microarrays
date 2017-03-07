@@ -4,6 +4,8 @@ MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 RUN apt-get -y update -qq  && apt-get -y upgrade
 
+
+
 RUN apt-get install -y --no-install-recommends apt-utils \
     libpangoft2-1.0-0  \
     libxt-dev \
@@ -13,9 +15,6 @@ RUN apt-get install -y --no-install-recommends apt-utils \
     libglib2.0-0  \
     libglib2.0-bin  \
     libpango-1.0-0  \
-    libcurl4-gnutls-dev \
-    libghc-curl-dev \
-    libcurl4-openssl-dev \
     libxml2-dev \
     libglib2.0-dev \
     libgdk-pixbuf2.0-dev \
@@ -38,6 +37,9 @@ RUN apt-get install -y --no-install-recommends apt-utils \
     lsb-release \
     libssl-dev \
     gcc && apt-get clean
+    
+RUN sudo apt-get build-dep libcurl4-openssl-dev  libghc-curl-dev   libcurl4-gnutls-dev
+RUN sudo apt-get install libcurl4-openssl-dev  libghc-curl-dev   libcurl4-gnutls-dev
   
 
 RUN Rscript -e "install.packages(c('gridSVG','cdfname', 'gcc', 'irkernel',  'devtools', 'dplyr', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo'), repos='https://cloud.r-project.org')"
