@@ -1,3 +1,5 @@
+![docker](https://msopentech.com/wp-content/uploads/dockericon.png)
+![affymetrics](http://mms.businesswire.com/media/20150720005017/en/477014/5/2294568_affymetrix_new_logo_no_tagline.jpg)
 [![Docker Pulls](https://img.shields.io/docker/pulls/fmunoz/rstudio-microarrays.svg?maxAge=2592000)](https://hub.docker.com/r/fmunoz/rstudio-microarrays/)
 
 
