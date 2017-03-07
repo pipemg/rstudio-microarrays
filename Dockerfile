@@ -38,8 +38,8 @@ RUN apt-get install -y --no-install-recommends apt-utils \
     libssl-dev \
     gcc && apt-get clean
     
-RUN sudo apt-get build-dep libcurl4-openssl-dev  libghc-curl-dev   libcurl4-gnutls-dev
-RUN sudo apt-get install libcurl4-openssl-dev  libghc-curl-dev   libcurl4-gnutls-dev
+RUN sudo apt-get build-dep  -y libcurl4-openssl-dev  libghc-curl-dev   libcurl4-gnutls-dev
+RUN sudo apt-get install -y libcurl4-openssl-dev  libghc-curl-dev   libcurl4-gnutls-dev
   
 
 RUN Rscript -e "install.packages(c('gridSVG','cdfname', 'gcc', 'irkernel',  'devtools', 'dplyr', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo'), repos='https://cloud.r-project.org')"
