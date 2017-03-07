@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/fmunoz/rstudio-microarrays.svg?maxAge=2592000)](https://hub.docker.com/r/fmunoz/rstudio-microarrays/)
+
+
 # RStudio-Microarrays in a Docker Container
 
 ## What is this?
