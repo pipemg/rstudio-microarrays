@@ -1,6 +1,7 @@
 FROM mccahill/rstudio
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
+RUN apt-get -y -q dist-upgrade 
 
 RUN apt-get -y update -qq  && apt-get -y upgrade
 
