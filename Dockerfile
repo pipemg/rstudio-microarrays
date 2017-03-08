@@ -3,10 +3,6 @@ FROM   ubuntu:16.04
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 
-# get R from a CRAN archive 
-RUN deb http://ppa.launchpad.net/marutter/rrutter/ubuntu xenial main 
-RUN deb-src http://ppa.launchpad.net/marutter/rrutter/ubuntu xenial main 
-RUN DEBIAN_FRONTEND=noninteractive apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B04C661B
 
 RUN apt-get update  &&   \
     apt-get upgrade  -y
@@ -16,8 +12,8 @@ RUN apt-get install  -y  libopenblas-base
 RUN apt-get  update
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get  install -y --force-yes \
-   r-base \
-   r-base-dev
+   r-recommended=3.3.1-1xenial0 \
+
 
 #Utilities
 RUN DEBIAN_FRONTEND=noninteractive apt-get  install -y \
