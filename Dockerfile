@@ -11,9 +11,9 @@ RUN apt-get update  &&   \
 RUN apt-get install  -y  libopenblas-base
 RUN apt-get  update
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get  install -y --force-yes \
-   r-recommended=3.3.1-1xenial0 \
-
+RUN wget https://launchpad.net/~edd/+archive/ubuntu/misc/+files/r-base-core-dbg_3.3.1-1.xenial.0_amd64.deb 
+RUN  sudo dpkg -i r-base-core-dbg_3.3.1-1.xenial.0_amd64.deb
+RUN rm r-base-core-dbg_3.3.1-1.xenial.0_amd64.deb
 
 #Utilities
 RUN DEBIAN_FRONTEND=noninteractive apt-get  install -y \
