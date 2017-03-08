@@ -38,7 +38,6 @@ RUN apt-get install -y --no-install-recommends libpangoft2-1.0-0  \
     xml-core \
     lsb-release \
     libssl-dev \
-    libstdc++6 \
     gcc && apt-get clean
     
 RUN sudo apt-get build-dep  -y  libcurl4-gnutls-dev  libghc-curl-dev  
