@@ -2,18 +2,12 @@ FROM   ubuntu:16.04
 
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
-
-
 RUN apt-get update  &&   \
     apt-get upgrade  -y
 
 # we want OpenBLAS for faster linear algebra as described here: http://brettklamer.com/diversions/statistical/faster-blas-in-r/
 RUN apt-get install  -y  libopenblas-base
 RUN apt-get  update
-
-RUN wget https://launchpad.net/~edd/+archive/ubuntu/misc/+files/r-base-core-dbg_3.3.1-1.xenial.0_amd64.deb 
-RUN  sudo dpkg -i r-base-core-dbg_3.3.1-1.xenial.0_amd64.deb
-RUN rm r-base-core-dbg_3.3.1-1.xenial.0_amd64.deb
 
 #Utilities
 RUN DEBIAN_FRONTEND=noninteractive apt-get  install -y \
@@ -31,6 +25,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get  install -y \
    sudo \
    libcurl4-openssl-dev \
    libxml2-dev 
+   
+   
+RUN wget https://launchpad.net/~edd/+archive/ubuntu/misc/+files/r-base-core-dbg_3.3.1-1.xenial.0_amd64.deb 
+RUN  sudo dpkg -i r-base-core-dbg_3.3.1-1.xenial.0_amd64.deb
+RUN rm r-base-core-dbg_3.3.1-1.xenial.0_amd64.deb
+
 
 RUN apt-get update && \
     apt-get upgrade -y
