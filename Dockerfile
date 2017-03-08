@@ -40,8 +40,8 @@ RUN apt-get install -y --no-install-recommends libpangoft2-1.0-0  \
     libssl-dev \
     gcc && apt-get clean
     
-RUN sudo apt-get build-dep  -y  libcurl4-gnutls-dev  libghc-curl-dev  
-RUN sudo apt-get install -y libcurl4-gnutls-dev libghc-curl-dev 
+#RUN sudo apt-get build-dep  -y  libcurl4-gnutls-dev  libghc-curl-dev  
+#RUN sudo apt-get install -y libcurl4-gnutls-dev libghc-curl-dev 
   
 
 RUN Rscript -e "install.packages(c('gridSVG','cdfname', 'gcc', 'irkernel',  'devtools', 'dplyr', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo'), repos='https://cloud.r-project.org')"
