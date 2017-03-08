@@ -1,4 +1,4 @@
-FROM mccahill/rstudio
+FROM bioconductor/devel_core2
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 RUN apt-get -y -q dist-upgrade 
