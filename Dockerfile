@@ -4,7 +4,7 @@ MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 
 # get R from a CRAN archive 
-RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu enial/" >>  /etc/apt/sources.list
+RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" >>  /etc/apt/sources.list
 RUN DEBIAN_FRONTEND=noninteractive apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 
 RUN apt-get update  &&   \
