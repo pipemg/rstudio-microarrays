@@ -27,7 +27,6 @@ RUN apt-get install -y --no-install-recommends libpangoft2-1.0-0  \
     libpangocairo-1.0-0 \
     libcairo2  \
     libcairo2-dev \ 
-    libgtk2.0-dev \   
     fonts-dejavu \
     gfortran \
     libssh2-1-dev \
