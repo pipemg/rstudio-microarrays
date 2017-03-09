@@ -61,11 +61,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 
 # R packages we need for devtools - and we need devtools to be able to update the rmarkdown package
-RUN DEBIAN_FRONTEND=noninteractive wget \
-   http://archive.linux.duke.edu/cran/src/contrib/rstudioapi_0.6.tar.gz \
+RUN DEBIAN_FRONTEND=noninteractive wget http://archive.linux.duke.edu/cran/src/contrib/rstudioapi_0.6.tar.gz ADD ./conf /r-studio
 
 
-ADD ./conf /r-studio
 RUN R CMD BATCH /r-studio/install-rmarkdown.R
 RUN rm /install-rmarkdown.Rout 
 
