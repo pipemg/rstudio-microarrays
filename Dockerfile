@@ -24,7 +24,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get  install -y \
    wget \
    sudo \
    libcurl4-openssl-dev \
-   libxml2-dev 
+   libxml2-dev \
+   r-base-core=3.3.1-1.xenial.0 \
+   r-base-dev=3.3.1-1.xenial.0
    
    
 RUN wget https://launchpad.net/~edd/+archive/ubuntu/misc/+files/r-base-core-dbg_3.3.1-1.xenial.0_amd64.deb 
