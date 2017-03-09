@@ -1,4 +1,4 @@
-FROM bioconductor/devel_core2
+FROM bioconductor/release_core2:R3.3.2_Bioc3.4
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 RUN apt-get -y -q dist-upgrade 
@@ -7,7 +7,7 @@ RUN apt-get -y update -qq  && apt-get -y upgrade
 
 RUN apt-get install -y --no-install-recommends apt-utils  software-properties-common 
 
-RUN sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test 
+#RUN sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test 
 
 RUN apt-get -y update -qq  && apt-get -y upgrade
 
