@@ -1,9 +1,9 @@
 FROM bioconductor/release_core2:R3.3.2_Bioc3.4
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
-RUN apt-get -y -q dist-upgrade 
+#RUN apt-get -y -q dist-upgrade 
 
-RUN apt-get -y update -qq  && apt-get -y upgrade
+#RUN apt-get -y update -qq  && apt-get -y upgrade
 
 RUN apt-get install -y --no-install-recommends apt-utils  software-properties-common 
 
@@ -84,7 +84,7 @@ RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
    
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery'));"
 
-RUN apt-get -y update -qq  && apt-get -y upgrade
+#RUN apt-get -y update -qq  && apt-get -y upgrade
 
 # add a non-root user so we can log into R studio as that user; make sure that user is in the group "users"
 #RUN adduser --disabled-password --gecos "" --ingroup users guest
