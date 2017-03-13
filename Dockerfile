@@ -2,6 +2,8 @@ FROM  mccahill/rstudio
 
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
+RUN apt-get -y -q dist-upgrade 
+
 RUN apt-get update  &&   \
     apt-get upgrade  -y
 
@@ -25,10 +27,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get  install -y \
    sudo \
    libcurl4-openssl-dev \
    libxml2-dev \
-   r-base-core \
-   r-base-dev
+   r-base-core=3.3.2-1xenial0 \
+   r-base-dev=3.3.2-1xenial0
    
-RUN apt-get -y -q dist-upgrade 
 
 RUN apt-get install -y --no-install-recommends libpangoft2-1.0-0  \
     libxt-dev \
