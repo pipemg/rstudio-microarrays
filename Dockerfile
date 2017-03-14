@@ -1,7 +1,7 @@
 FROM rocker/rstudio:3.3.2
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
-#RUN apt-get -y -q dist-upgrade 
+RUN apt-get -y -q dist-upgrade 
 
 #RUN apt-get -y update -qq  && apt-get -y upgrade
 
