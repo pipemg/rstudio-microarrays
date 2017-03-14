@@ -1,4 +1,4 @@
-FROM bioconductor/release_core2:R3.3.2_Bioc3.4
+FROM bioconductor/devel_base2:20170124
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 #RUN apt-get -y -q dist-upgrade 
