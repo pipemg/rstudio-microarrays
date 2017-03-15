@@ -24,7 +24,7 @@ RUN apt-get build-dep -y r-base
 
 RUN curl https://cran.r-project.org/src/base/R-3/R-3.2.1.tar.gz | tar xz
 RUN cd R-3.2.1
-RUN ./configure; make; make install
+RUN ./configure | make | make install
   
 
 RUN apt-get install gdebi-core
