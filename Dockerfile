@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 RUN apt-get update  &&   \
@@ -16,12 +16,16 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get  install -y \
    nmap \
    socat \
    python-software-properties \
-   wget \
    sudo \
    libcurl4-openssl-dev \
-   libxml2-dev \
-   r-base-core=3.3.2-1xenial0 \
-   r-base-dev=3.3.2-1xenial0
+   libxml2-dev 
+   
+RUN apt-get build-dep -y r-base 
+
+RUN curl https://cran.r-project.org/src/base/R-3/R-3.2.1.tar.gz | tar xz
+RUN cd R-3.2.1
+RUN ./configure; make; make install
+  
 
 RUN apt-get install gdebi-core
 RUN wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
