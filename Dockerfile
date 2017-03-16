@@ -38,7 +38,15 @@ RUN apt-get install -y --no-install-recommends build-essential \
     libc6-dev \
     libreadline6 libreadline6-dev \
     gfortran xorg-dev \
-    curl wget
+    curl wget \
+    libpaper-utils \
+    libtk8.6 \
+    libtcl8.6 \
+    liblapack3 \
+    liblapack.so.3 \
+    libgomp1 \
+    libc6 \
+    xdg-utils  
     
   RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
   && locale-gen en_US.utf8 \
