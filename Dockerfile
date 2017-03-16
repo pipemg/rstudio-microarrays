@@ -23,7 +23,6 @@ RUN apt-get install -y --no-install-recommends build-essential \
     gsfonts \
     libbz2-1.0 \
     libcurl3 \
-    libicu52 \
     libopenblas-dev \
     libpangocairo-1.0-0 \ 
     libpcre3 \
