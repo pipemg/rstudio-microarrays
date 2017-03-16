@@ -9,9 +9,11 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV TERM xterm
 
+RUN apt-get build-dep  g++
+
 ## dependencies
 RUN apt-get update \ 
-  && apt-get install -y --no-install-recommends \
+  && apt-get install -y --no-install-recommends build-essential \
     bash-completion \
     ca-certificates \
     file \
@@ -33,8 +35,9 @@ RUN apt-get update \
     unzip \
     zip \
     zlib1g \
-    libc6-dev \
-  && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
+    libc6-dev 
+    
+  RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
   && locale-gen en_US.utf8 \
   && /usr/sbin/update-locale LANG=en_US.UTF-8 \
   && BUILDDEPS="curl \
