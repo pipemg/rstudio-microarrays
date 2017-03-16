@@ -72,8 +72,8 @@ RUN apt-get install -y --no-install-recommends build-essential \
     xvfb \
     zlib1g-dev" 
     
-RUN curl https://cran.rstudio.com/bin/linux/ubuntu/trusty/r-base-core-dbg_3.2.5-1trusty0_amd64.deb
-RUN dpkg -i r-base-core-dbg_3.2.5-1trusty0_amd64.deb
+RUN https://cran.rstudio.com/bin/linux/ubuntu/xenial/r-base-core_3.2.5-1xenial_amd64.deb
+RUN dpkg -i r-base-core_3.2.5-1xenial_amd64.deb
 
   
 
