@@ -9,11 +9,11 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV TERM xterm
 
-RUN apt-get build-dep  g++
 
 ## dependencies
-RUN apt-get update \ 
-  && apt-get install -y --no-install-recommends build-essential \
+RUN apt-get update 
+RUN apt-get build-dep  g++
+RUN apt-get install -y --no-install-recommends build-essential \
     bash-completion \
     ca-certificates \
     file \
