@@ -43,7 +43,6 @@ RUN apt-get install -y --no-install-recommends build-essential \
     libtk8.6 \
     libtcl8.6 \
     liblapack3 \
-    liblapack.so.3 \
     libgomp1 \
     libc6 \
     xdg-utils  
@@ -60,6 +59,7 @@ RUN apt-get install -y --no-install-recommends build-essential \
     libjpeg-dev \
     libicu-dev \
     libpcre3-dev \
+    libatlas3-base \
     libpng-dev \
     libreadline-dev \
     libtiff5-dev \
