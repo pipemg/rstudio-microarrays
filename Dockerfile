@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 ARG R_VERSION
@@ -45,7 +45,9 @@ RUN apt-get install -y --no-install-recommends build-essential \
     liblapack3 \
     libgomp1 \
     libc6 \
-    xdg-utils  
+    xdg-utils   \
+    libc6 \
+    
     
   RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
   && locale-gen en_US.utf8 \
