@@ -35,7 +35,9 @@ RUN apt-get install -y --no-install-recommends build-essential \
     unzip \
     zip \
     zlib1g \
-    libc6-dev 
+    libc6-dev \
+    libreadline6 libreadline6-dev \
+    gfortran xorg-dev 
     
   RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
   && locale-gen en_US.utf8 \
