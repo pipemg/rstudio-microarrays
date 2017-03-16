@@ -38,7 +38,7 @@ RUN apt-get install -y --no-install-recommends build-essential \
     libc6-dev \
     libreadline6 libreadline6-dev \
     gfortran xorg-dev \
-    curl 
+    curl wget
     
   RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
   && locale-gen en_US.utf8 \
@@ -72,7 +72,7 @@ RUN apt-get install -y --no-install-recommends build-essential \
     xvfb \
     zlib1g-dev" 
     
-RUN curl https://cran.rstudio.com/bin/linux/ubuntu/xenial/r-base-core_3.2.5-1xenial_amd64.deb
+RUN wget https://cran.rstudio.com/bin/linux/ubuntu/xenial/r-base-core_3.2.5-1xenial_amd64.deb .
 RUN dpkg -i r-base-core_3.2.5-1xenial_amd64.deb
 
   
