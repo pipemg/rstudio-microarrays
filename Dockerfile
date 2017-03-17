@@ -12,7 +12,9 @@ ENV TERM xterm
 
 ## dependencies
 RUN apt-get update 
+
 RUN apt-get build-dep -y g++
+
 RUN apt-get install -y --no-install-recommends build-essential \
     bash-completion \
     ca-certificates \
@@ -45,10 +47,10 @@ RUN apt-get install -y --no-install-recommends build-essential \
     libgomp1 \
     libc6 \
     xdg-utils   \
-    libc6 \
+    libc6 
     
     
-  RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
+RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
   && locale-gen en_US.utf8 \
   && /usr/sbin/update-locale LANG=en_US.UTF-8 \
   && BUILDDEPS="curl \
