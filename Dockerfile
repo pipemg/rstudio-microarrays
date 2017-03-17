@@ -8,6 +8,9 @@ ENV R_VERSION ${R_VERSION:-3.2.5}
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV TERM xterm
+ARG DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
+
 
 
 ## dependencies
@@ -88,7 +91,7 @@ RUN dpkg -i r-base-core_3.2.5-1xenial_amd64.deb
 
   
 
-RUN apt-get install gdebi-core
+RUN apt-get install -y gdebi-core
 RUN wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
 RUN gdebi rstudio-server-1.0.136-amd64.deb
 
