@@ -89,8 +89,6 @@ RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
 RUN wget https://cran.rstudio.com/bin/linux/ubuntu/xenial/r-base-core_3.2.5-1xenial_amd64.deb
 RUN dpkg -i r-base-core_3.2.5-1xenial_amd64.deb
 
-  
-
 RUN apt-get install -y gdebi-core
 RUN wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
 RUN gdebi rstudio-server-1.0.136-amd64.deb
@@ -127,5 +125,11 @@ RUN apt-get install -y --no-install-recommends libpangoft2-1.0-0  \
     libstdc++6 \
     gcc && apt-get clean
     
+    
+    
+COPY userconf.sh /etc/cont-init.d/conf
+EXPOSE 8787
+
+CMD ["/init"]
 
 
