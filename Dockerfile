@@ -130,6 +130,6 @@ RUN apt-get install -y --no-install-recommends libpangoft2-1.0-0  \
 COPY userconf.sh /etc/cont-init.d/conf
 EXPOSE 8787
 
-CMD ["/init"]
+#CMD ["/init"]
 
 
