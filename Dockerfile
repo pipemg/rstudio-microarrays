@@ -16,8 +16,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 ## dependencies
 RUN apt-get update 
 
-RUN apt-get build-dep -y g++
-
 RUN apt-get install -y --no-install-recommends build-essential \
     bash-completion \
     ca-certificates \
