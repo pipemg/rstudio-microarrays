@@ -1,4 +1,4 @@
-FROM rocker/rstudio:3.3.2
+FROM rocker/rstudio:3.4.2
 MAINTAINER "Felipe de Jesus Muñoz Gonzalez" fmunoz@lcg.unam.mx
 
 RUN apt-get -y -q dist-upgrade 
