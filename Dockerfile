@@ -11,7 +11,18 @@ RUN apt-get -y update -qq  && apt-get -y upgrade
 
 RUN apt-get -y update -qq  && apt-get -y upgrade
 
-
 RUN apt-get install -y --no-install-recommends 
    
-
+RUN apt-get install  libpangoft2-1.0-0  \
+    libxt-dev \
+    xvfb \
+    xauth \ 
+    xfonts-base \
+    libglib2.0-0  \
+    libglib2.0-bin  \
+    libpango-1.0-0  \
+    libxml2-dev \
+    libglib2.0-dev \
+    libgdk-pixbuf2.0-dev \
+    libatk1.0-dev \
+    libssl1.0.0 
