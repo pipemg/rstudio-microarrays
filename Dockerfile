@@ -24,5 +24,4 @@ RUN apt-get install  libpangoft2-1.0-0  \
     libxml2-dev \
     libglib2.0-dev \
     libgdk-pixbuf2.0-dev \
-    libatk1.0-dev \
-    libssl1.0.0 
+    libatk1.0-dev 
