@@ -1,5 +1,5 @@
 
-RUN Rscript -e "install.packages(c('gridSVG','cdfname', 'gcc', 'irkernel',  'devtools', 'dplyr', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo'), repos='https://cloud.r-project.org')"
+RUN Rscript -e "install.packages(c('gridSVG','cdfname', 'gcc', 'irkernel', 'RColorBrewer' ,'devtools', 'dplyr', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo', 'ggplot2', 'gplots'), repos='https://cloud.r-project.org')"
 
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite()"
 
@@ -9,6 +9,7 @@ RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
    'annotationdbi', \
    'arrayQualityMetrics', \
    'affy', \
+   'affycoretools' \
    'affyio', \
    'affxparser' , \
    'biostrings', \
@@ -32,6 +33,8 @@ RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
    'limma', \  
    'oligo', \
    'pathifier', \
+   'pd.hta.2.0' \
+   'hta20transcriptcluster.db' \
    's4vectors', \
    'SVGAnnotation', \ 
    'simpleaffy'));"
