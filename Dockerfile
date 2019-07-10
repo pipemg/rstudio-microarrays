@@ -20,4 +20,19 @@ RUN apt-get install  -y  libpangoft2-1.0-0  \
     libxml2-dev \
     libglib2.0-dev \
     libgdk-pixbuf2.0-dev \
-    libatk1.0-dev 
+    libatk1.0-dev \
+    libpangocairo-1.0-0 \
+    libcairo2  \
+    libcairo2-dev \ 
+    fonts-dejavu \
+    gfortran \
+    libssh2-1-dev \
+    r-cran-xml \
+    r-cran-plyr \ 
+    r-cran-ggplot2 \
+    r-cran-gplots \    
+    libnlopt-dev \
+    xml-core \
+    lsb-release \
+    libssl-dev \
+    gcc && apt-get clean
