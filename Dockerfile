@@ -36,3 +36,5 @@ RUN apt-get install  -y  libpangoft2-1.0-0  \
     lsb-release \
     libssl-dev \
     gcc && apt-get clean
+
+sh R_bioconductor_packages.sh
