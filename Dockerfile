@@ -109,6 +109,4 @@ RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c( \
    's4vectors', \
    'SVGAnnotation', \ 
    'simpleaffy', 'subselect', 'TTR', 'units', 'r-cran-rocr'));"
-   
-   
-RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery'));"
+  
