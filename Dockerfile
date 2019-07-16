@@ -60,13 +60,12 @@ RUN apt-get install  -y  libpangoft2-1.0-0  \
     r-cran-multcomp \
     r-cran-lme4 \
     r-cran-cubature 
-    r-cran-strucchange \
     r-cran-mass \
     r-cran-tseries \
     r-cran-lmtest \
     gcc && apt-get clean
 
-RUN Rscript -e "install.packages(c('recipes','questionr','ipred','gridSVG','cdfname', 'gcc', 'irkernel', 'RColorBrewer' ,'devtools', 'dplyr', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo', 'ggplot2', 'gplots'), dependencies=T, repos='https://cloud.r-project.org')"
+RUN Rscript -e "install.packages(c('strucchange','recipes','questionr','ipred','gridSVG','cdfname', 'gcc', 'irkernel', 'RColorBrewer' ,'devtools', 'dplyr', 'tidyr', 'shiny', 'rmarkdown', 'forecast', 'stringr', 'rsqlite','reshape2', 'nycflights13', 'caret', 'rcurl', 'crayon', 'randomforest', 'Cairo', 'ggplot2', 'gplots'), dependencies=T, repos='https://cloud.r-project.org')"
 
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R'); biocLite()"
 
